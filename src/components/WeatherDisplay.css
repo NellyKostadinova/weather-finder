@@ -1,0 +1,119 @@
+.weatherDisplay {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 5px;
+  padding: 50px;
+  margin-top: 70px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  transform-origin: top center;
+  background-color: white;
+  box-shadow: 2px 3px 17px 0px rgba(0, 0, 0, 0.31);
+  overflow: hidden;
+  animation: slideUp 1s;
+  animation-fill-mode: both;
+  transition: all 1s;
+}
+.weatherDisplay:nth-last-child(2) {
+  margin-top: 60px;
+  transform: translate(-50%) scale(0.95);
+  opacity: 0.9;
+}
+.weatherDisplay:nth-last-child(3) {
+  margin-top: 50px;
+  transform: translate(-50%) scale(0.9);
+  opacity: 0.8;
+}
+.weatherDisplay:nth-last-child(n + 4) {
+  transform: translate(-50%) scale(0.85);
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  0% {
+    top: 600px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.city {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.weather-description {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 0px;
+}
+
+.two-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.two-column__left {
+  margin-right: auto;
+}
+
+.two-column__right {
+  text-align: left;
+}
+
+.current-temp {
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.current-temp p {
+  margin: 0;
+  position: relative;
+  left: 10px;
+}
+.min-temp {
+  margin-right: 10px;
+}
+.min-temp,
+.max-temp {
+  display: inline-block;
+  font-size: 16px;
+}
+.min-temp::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid black;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
+}
+.max-temp::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid black;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
+}
+
+.two-column__right h5 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 15px;
+  margin: 5px 0px;
+}
+.two-column__right p {
+  font-size: 14px;
+  margin: 5px 0px;
+}
